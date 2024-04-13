@@ -6,10 +6,9 @@ Feature: Quote Search Feature
         And I navigate to Recent Activity page
         Then I should be presented with Recent activity page
 
-    @SearchBy3CharReference
+    @SearchByReference
     Scenario: Search Quotes By Using 3 character reference
-        And I click on Reference
-        And I enter a string of 3 characters in length
+        And I type my Reference
         And I click Search
         Then I should be displayed with Quotes matching the entered reference
 

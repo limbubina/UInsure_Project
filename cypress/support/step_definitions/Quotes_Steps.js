@@ -5,10 +5,19 @@ const QuotesPagePO = new QuotesPage_PO();
 
 When("I navigate to Recent Activity page", () => {
   QuotesPagePO.navigateUrl("/retrieve-quote");
+  cy.wait()
 });
 
-Then("I should be presented with Recent activity page",()=>{});
-When("I click on Reference", () => {});
-When("I enter a string of 3 characters in length", () => {});
-When("I click Search", () => {});
+Then("I should be presented with Recent activity page",()=>{
+  QuotesPagePO.getHeaderText("Recent Activity");
+});
+
+When("I type my Reference", () => {
+  QuotesPagePO.typeReferenceNumber("UNI");
+});
+
+When("I click Search", () => {
+  QuotesPagePO.elements.searchButton().click();
+});
 Then( "I should be displayed with Quotes matching the entered reference", () => {});
+cy.end();
